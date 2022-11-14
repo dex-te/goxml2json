@@ -126,7 +126,7 @@ func (dec *Decoder) Decode(root *Node) error {
 // and spaces, from categories L, M, N, P, S, Zs.
 // Spacing characters are set by category Z and property Pattern_White_Space.
 func trimNonGraphic(s string) string {
-	if s == "" || s==" "{
+	if s == ""{
 		return s
 	}
 
