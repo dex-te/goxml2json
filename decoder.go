@@ -126,18 +126,18 @@ func (dec *Decoder) Decode(root *Node) error {
 // and spaces, from categories L, M, N, P, S, Zs.
 // Spacing characters are set by category Z and property Pattern_White_Space.
 func trimNonGraphic(s string) string {
-	if s == "" {
+	if s == "" || s==" "{
 		return s
 	}
 
 	var first *int
 	var last int
 	for i, r := range []rune(s) {
-		if r != ' ' {
-			if unicode.IsSpace(r) {
-				continue
-			}
+	
+		if unicode.IsSpace(r) {
+			continue
 		}
+		
 
 		if first == nil {
 			f := i // copy i
